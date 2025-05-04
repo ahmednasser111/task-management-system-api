@@ -18,14 +18,17 @@ const sendEmail = async (
   name,
   link
 ) => {
+  // Input validation
+  if (!subject || !send_to || !send_from || !template) {
+    throw new Error('Missing required email parameters');
+  }
+
   const transporter = nodeMailer.createTransport({
-    service: "Outlook365",
-    host: "smtp.office365.com",
-    port: 587,
-    secure: false,
+    service: "Gmail",
+    host: "smtp.gmail.com",
     auth: {
-      user: process.env.USER_EMAIL, //Your Outlook email
-      pass: process.env.EMAIL_PASS, //Your Outlook password
+      user: process.env.USER_EMAIL, // Your Gmail address
+      pass: process.env.EMAIL_PASS, // Your Gmail app password
     },
   });
 
@@ -58,8 +61,8 @@ const sendEmail = async (
     console.log("Message sent: %s", info.messageId);
     return info;
   } catch (error) {
-    console.log("Error sending email: ", error);
-    throw error;
+    console.error("Error sending email: ", error.message);
+    throw new Error(`Failed to send email: ${error.message}`);
   }
 };
 
