@@ -1,58 +1,32 @@
-# Taskfyer Backend
+# Taskfyer Backend Documentation
 
-Taskfyer is a task management backend API built with Node.js, Express, and MongoDB. It supports user authentication, email verification, password reset, and CRUD operations for tasks.
+This document provides a detailed guide to understanding and using the Taskfyer backend API.
 
 ---
 
 ## Table of Contents
 
-1. [Features](#features)
-2. [Tech Stack](#tech-stack)
-3. [Getting Started](#getting-started)
-4. [Environment Variables](#environment-variables)
-5. [API Endpoints](#api-endpoints)
+1. [Introduction](#introduction)
+2. [Setup and Installation](#setup-and-installation)
+3. [Environment Variables](#environment-variables)
+4. [API Endpoints](#api-endpoints)
    - [Authentication](#authentication)
    - [Admin](#admin)
    - [Tasks](#tasks)
-6. [Middleware](#middleware)
-7. [Error Handling](#error-handling)
-8. [Email Templates](#email-templates)
-9. [Folder Structure](#folder-structure)
-10. [License](#license)
-11. [Author](#author)
+5. [Middleware](#middleware)
+6. [Error Handling](#error-handling)
+7. [Email Templates](#email-templates)
+8. [Folder Structure](#folder-structure)
 
 ---
 
-## Features
+## Introduction
 
-- User registration and login (JWT-based authentication)
-- Email verification and password reset via email
-- Role-based access (admin, creator, user)
-- CRUD operations for tasks
-- Middleware for authentication, authorization, and error handling
+Taskfyer is a task management backend API built with Node.js, Express, and MongoDB. It provides features like user authentication, email verification, password reset, and task management.
 
 ---
 
-## Tech Stack
-
-- Node.js
-- Express.js
-- MongoDB (Mongoose)
-- Nodemailer (with Handlebars templates)
-- JWT for authentication
-- dotenv for environment variables
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v16+ recommended)
-- MongoDB database (local or Atlas)
-- Gmail account for sending emails (App password required)
-
-### Installation
+## Setup and Installation
 
 1. Clone the repository:
 
@@ -67,7 +41,7 @@ Taskfyer is a task management backend API built with Node.js, Express, and Mongo
    npm install
    ```
 
-3. Create a `.env` file in the backend directory and configure the following variables (see [Environment Variables](#environment-variables)).
+3. Configure environment variables in a `.env` file (see [Environment Variables](#environment-variables)).
 
 4. Start the server:
 
@@ -75,15 +49,13 @@ Taskfyer is a task management backend API built with Node.js, Express, and Mongo
    npm run dev
    ```
 
-   The server will run on `http://localhost:8000` by default.
-
 ---
 
 ## Environment Variables
 
 The `.env` file should include the following variables:
 
-```
+```properties
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 PORT=8000
@@ -182,16 +154,16 @@ backend/
     views/             # Email templates
   .env                 # Environment variables
   server.js            # Entry point
-  README.md            # Project overview and documentation
+  README.md            # Project overview
+  DOCUMENTATION.md     # Detailed documentation
 ```
 
 ---
-## License
 
-This project is licensed under the [MIT License](LICENSE).
+## Additional Notes
+
+- Ensure you have a Gmail account with an app password for sending emails.
+- Use Postman or a similar tool to test the API endpoints.
+- For production, set `NODE_ENV=production` and configure secure cookies.
 
 ---
-
-## Author
-
-[Ahmed Nasser](https://github.com/ahmednasser111)
