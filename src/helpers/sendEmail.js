@@ -27,8 +27,8 @@ const sendEmail = async (
     service: "Gmail",
     host: "smtp.gmail.com",
     auth: {
-      user: process.env.USER_EMAIL, // Your Gmail address
-      pass: process.env.EMAIL_PASS, // Your Gmail app password
+      user: process.env.USER_EMAIL,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
