@@ -14,10 +14,10 @@ const app = express();
 
 // middleware
 app.use(
-  cors({
-    origin: "*",
-    credentials: true,
-  })
+	cors({
+		origin: "https://task-management-system-tawny-ten.vercel.app",
+		credentials: true,
+	})
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
